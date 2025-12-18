@@ -1,0 +1,301 @@
+1️⃣ What Git & GitHub REALLY Are (Industry View)
+Git (Core Tool)
+
+Git = Distributed Version Control System
+
+Tracks who changed what, when, and why
+
+Works locally (even without internet)
+
+GitHub (Platform)
+
+GitHub = Cloud platform that hosts Git repositories
+
+Adds:
+
+Collaboration
+
+Pull Requests
+
+Code reviews
+
+CI/CD
+
+Issue tracking
+
+Security scanning
+
+👉 Companies use Git + GitHub together
+
+2️⃣ Key Git Concepts (Must Know)
+Term	Meaning
+Repository (Repo)	Project folder tracked by Git
+Commit	Snapshot of changes
+Branch	Independent line of development
+Merge	Combine branches
+Remote	Online repo (GitHub)
+Clone	Copy remote repo locally
+Pull	Fetch + merge changes
+Push	Upload local commits
+HEAD	Current commit pointer
+Staging Area	Area before commit
+3️⃣ Git Installation & Configuration
+git --version
+
+Configure Identity (VERY IMPORTANT)
+git config --global user.name "Ashish Yadav"
+git config --global user.email "your@email.com"
+
+
+Check:
+
+git config --list
+
+4️⃣ Creating & Managing a Repository
+Create New Repo (Local)
+git init
+
+Clone Existing Repo
+git clone https://github.com/user/repo.git
+
+5️⃣ Core Git Workflow (Daily Use)
+Check Status
+git status
+
+Track Files
+git add file.txt
+git add .
+
+Commit Changes
+git commit -m "Meaningful commit message"
+
+Push to GitHub
+git push origin main
+
+Pull Latest Changes
+git pull origin main
+
+6️⃣ Branching (INDUSTRY LEVEL IMPORTANT)
+Create Branch
+git branch feature-login
+
+Switch Branch
+git checkout feature-login
+
+
+OR (Modern way)
+
+git switch feature-login
+
+Create + Switch
+git checkout -b feature-login
+
+List Branches
+git branch
+
+Delete Branch
+git branch -d feature-login
+
+7️⃣ Merging & Pull Requests (Real Company Flow)
+Merge Branch
+git checkout main
+git merge feature-login
+
+GitHub Pull Request Flow
+
+Create feature branch
+
+Push branch
+
+Open Pull Request
+
+Code review
+
+Merge after approval
+
+👉 Most companies DO NOT allow direct push to main
+
+8️⃣ Handling Merge Conflicts
+
+Occurs when same line is edited by two people.
+
+git status
+
+
+Resolve conflict → then:
+
+git add .
+git commit
+
+9️⃣ Remote Repositories
+View Remote
+git remote -v
+
+Add Remote
+git remote add origin https://github.com/user/repo.git
+
+Change Remote URL
+git remote set-url origin NEW_URL
+
+🔟 Git Log & History (Debugging Skill)
+git log
+git log --oneline
+git log --graph --all
+
+Show Changes
+git diff
+git diff HEAD~1
+
+1️⃣1️⃣ Undoing Mistakes (VERY IMPORTANT)
+Unstage File
+git reset file.txt
+
+Undo Last Commit (Keep Changes)
+git reset --soft HEAD~1
+
+Undo Last Commit (Delete Changes)
+git reset --hard HEAD~1
+
+
+⚠️ Never use --hard on shared branches
+
+1️⃣2️⃣ Stash (Temporary Save)
+git stash
+git stash list
+git stash apply
+git stash pop
+
+
+Used when:
+
+You must switch branches quickly
+
+1️⃣3️⃣ Tags (Releases)
+git tag v1.0
+git push origin v1.0
+
+
+Used for:
+
+Production releases
+
+1️⃣4️⃣ .gitignore (Industry Essential)
+
+Example:
+
+node_modules/
+.env
+dist/
+*.log
+
+1️⃣5️⃣ GitHub Features (Industry Use)
+Issues
+
+Bug tracking
+
+Feature requests
+
+Pull Requests
+
+Code review
+
+Approval flow
+
+Actions (CI/CD)
+
+Automated testing
+
+Deployment pipelines
+
+Projects
+
+Kanban boards
+
+1️⃣6️⃣ GitHub Actions (Basic Example)
+name: CI
+on: [push]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: npm install
+      - run: npm test
+
+1️⃣7️⃣ Git Workflow Models (Companies Use)
+1. Feature Branch Workflow (Most Common)
+main → feature-login → PR → merge
+
+2. Git Flow
+
+main
+
+develop
+
+feature/*
+
+release/*
+
+hotfix/*
+
+3. Trunk-Based Development
+
+Small commits directly to main (used by big tech)
+
+1️⃣8️⃣ Commit Message Standards
+
+❌ Bad:
+
+fixed bug
+
+
+✅ Good:
+
+fix(auth): handle invalid login token
+
+
+Format:
+
+type(scope): description
+
+1️⃣9️⃣ Security Best Practices
+
+Never commit:
+
+.env
+
+API keys
+
+Passwords
+
+Use GitHub Secrets
+
+Enable branch protection
+
+2️⃣0️⃣ Interview Questions (YOU WILL BE ASKED)
+
+✔ Difference between Git & GitHub
+✔ Merge vs Rebase
+✔ How do you resolve conflicts
+✔ What is HEAD
+✔ What is stash
+✔ Git reset vs revert
+✔ Pull request workflow
+
+2️⃣1️⃣ How YOU Should Practice (Important for You)
+
+Since you already work with Node.js, React, backend projects, you should:
+
+Create 1 repo per project
+
+Use feature branches
+
+Write proper commit messages
+
+Use PR even for solo projects
+
+
+✅ Final Advice (Industry Reality)
+
+Git is NOT about commands
+Git is about discipline, collaboration, and history
