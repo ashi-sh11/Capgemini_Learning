@@ -1,0 +1,19 @@
+package Task_28_01_2026.Circular_LinkedList.RoundRobinCPUScheduling;
+
+class ProcessNode {
+    int pid;
+    int burstTime;
+    int priority;
+
+    int waitingTime = 0;
+    int turnaroundTime = 0;
+
+    ProcessNode next;
+
+    public ProcessNode(int pid, int burstTime, int priority) {
+        this.pid = pid;
+        this.burstTime = burstTime;
+        this.priority = priority;
+        this.next = null;
+    }
+}
